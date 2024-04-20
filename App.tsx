@@ -22,7 +22,14 @@ import Likes from './pages/Likes';
 
 // Import profile
 import Profile from './pages/Profile';
+import UserMap from './pages/UserMap';
+
 import { store } from './useRedux/store';
+
+
+// Import headers
+import CustomerHeader from './components/CustomerHeader';
+
 
 
 const Stack = createNativeStackNavigator()
@@ -39,7 +46,12 @@ const LoginStack = () =>
 // Product Stack
 const ProductStack = () =>
 <Stack.Navigator>
-  <Stack.Screen name='Product' component={AllProduct} />
+  <Stack.Screen name='Product' component={AllProduct} 
+    options={{
+      headerShown: true,
+      header: () => <CustomerHeader />
+    }}
+   />
   <Stack.Screen name='ProductDetail' component={ProductDetail} />
 </Stack.Navigator>
 
@@ -54,6 +66,7 @@ const LikesStack = () =>
 const ProfileStack = () =>
 <Stack.Navigator>
   <Stack.Screen name='Profile' component={Profile} />
+  <Stack.Screen name='UserMap' component={UserMap} />
 </Stack.Navigator>
 
 // App Tabs

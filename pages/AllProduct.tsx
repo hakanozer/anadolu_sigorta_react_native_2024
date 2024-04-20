@@ -18,7 +18,7 @@ export default function AllProduct() {
   }, [])
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.mainView}>
         <FlatList 
           data={arrProduct}
@@ -28,7 +28,7 @@ export default function AllProduct() {
           keyExtractor={item => item.id.toString()}
         />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
